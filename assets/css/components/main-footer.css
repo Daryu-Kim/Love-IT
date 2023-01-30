@@ -1,0 +1,48 @@
+@import "/assets/css/_variabled.css";
+@import "/assets/css/font.css";
+@import "/assets/css/reset.css";
+
+.footer {
+  background-color: var(--background-color);
+  width: 100vw;
+  padding: 6px 28px;
+  position: fixed;
+  justify-content: space-between;
+  display: none;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.footer-item-radio:checked + label > * {
+  color: var(--accent-color);
+}
+
+.footer-item-label {
+  cursor: pointer;
+}
+
+.footer > input {
+  display: none;
+}
+
+.footer > label > * {
+  color: var(--sub-color);
+}
+
+.footer > label > i {
+  font-size: 24px;
+}
+
+.footer > label > p {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

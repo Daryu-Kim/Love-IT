@@ -1,0 +1,13 @@
+:root {
+    --primary-color: black;
+    --gradient-top: #f78ca0;
+    --gradient-midtop: #f9748f;
+    --gradient-midbottom: #fd868c;
+    --gradient-bottom: #fe9a8b;
+    --sub-color: #999;
+    --background-color: #f6f5f4;
+    --accent-color: #f5576c;
+
+    --mobile: 768px;
+    --desktop: 1024px;
+}
