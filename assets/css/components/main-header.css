@@ -21,11 +21,20 @@
     display: flex;
 }
 
+.header-item-radio {
+    display: none;
+}
+
+.header-item-radio:checked + .header-item {
+    color: var(--accent-color);
+}
+
 .header-item {
     font-size: 18px;
     font-weight: 700;
     margin-right: 16px;
     cursor: pointer;
+    color: var(--sub-color);
 }
 
 .header-item:last-child {
@@ -36,4 +45,9 @@
     font-size: 24px;
     color: var(--accent-color);
     cursor: pointer;
+    background-image: linear-gradient(to bottom, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  
 }

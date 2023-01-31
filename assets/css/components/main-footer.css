@@ -15,7 +15,14 @@
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.35);
 }
 
-.footer-item-radio:checked + label > * {
+.footer-item-radio:checked + label > i {
+  background-image: linear-gradient(to bottom, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.footer-item-radio:checked + label > p {
   color: var(--accent-color);
 }
 
