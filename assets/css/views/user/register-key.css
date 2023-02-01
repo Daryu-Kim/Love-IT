@@ -1,0 +1,39 @@
+@import "/assets/css/_variabled.css";
+@import "/assets/css/font.css";
+@import "/assets/css/reset.css";
+
+
+.content {
+    padding: 32px 24px;
+}
+
+.content-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.content-des {
+    margin-top: 8px;
+    color: var(--sub-color);
+}
+
+.content-key-box {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 36px;
+}
+
+.content-key {
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: underline;
+    width: 64px;
+    height: 4px;
+}
+
+.content-phone:focus {
+    outline: 0;
+}

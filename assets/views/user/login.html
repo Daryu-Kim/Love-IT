@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
+    <title>Lovit - 러빗</title>
+    <meta charset="utf-8">
+    <meta name="description" content="소개팅 프로그레시브 웹앱입니다.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <link rel="stylesheet" href="/assets/css/components/main-header.css">
+    <link rel="stylesheet" href="/assets/css/components/main-footer.css">
+    <link rel="stylesheet" href="/assets/css/views/user/login.css">
+
+    <!-- (B) ICONS & PLATFORM SPECIFIC -->
+    <!-- (B1) GOOD OLD FAVICON -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- (B2) ANDROID/CHROME -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="white">
+
+    <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hello World">
+
+    <!-- (B4) WINDOWS -->
+    <meta name="msapplication-TileImage" content="icon-512.png">
+    <meta name="msapplication-TileColor" content="#FFF">
+
+    <!-- (C) WEB APP MANIFEST -->
+    <!-- https://web.dev/add-manifest/ -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- (D) SERVICE WORKER -->
+    <script>
+        if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
+    </script>
+
+    <!-- (E) STYLESHEET + JAVASCRIPT
+        <link rel="stylesheet" href="YOUR-STYLES.css">
+        <script defer src="YOUR-SCRIPTS.js"></script>
+        -->
+    <script src="https://kit.fontawesome.com/4110c1f003.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="video-box">
+            <video src="/assets/components/video.mp4" autoplay controls></video>
+            <div class="video-overlay"></div>
+            <div class="video-control-box">
+                <p class="video-control-btn">러브잇 시작하기</p>
+                <p class="video-control-terms">
+                    시작하면 
+                    <a href="">서비스 이용약관</a>
+                    ,
+                    <a href="">개인정보 처리방침</a>
+                    ,
+                    <br>
+                    그리고 
+                    <a href="">위치정보 이용약관</a>
+                    에 동의하게 됩니다.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/user/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
+    <title>Lovit - 러빗</title>
+    <meta charset="utf-8">
+    <meta name="description" content="소개팅 프로그레시브 웹앱입니다.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <link rel="stylesheet" href="/assets/css/components/register-header.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-key.css">
+
+    <!-- (B) ICONS & PLATFORM SPECIFIC -->
+    <!-- (B1) GOOD OLD FAVICON -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- (B2) ANDROID/CHROME -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="white">
+
+    <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hello World">
+
+    <!-- (B4) WINDOWS -->
+    <meta name="msapplication-TileImage" content="icon-512.png">
+    <meta name="msapplication-TileColor" content="#FFF">
+
+    <!-- (C) WEB APP MANIFEST -->
+    <!-- https://web.dev/add-manifest/ -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- (D) SERVICE WORKER -->
+    <script>
+        if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
+    </script>
+
+    <!-- (E) STYLESHEET + JAVASCRIPT
+        <link rel="stylesheet" href="YOUR-STYLES.css">
+        <script defer src="YOUR-SCRIPTS.js"></script>
+        -->
+    <script src="https://kit.fontawesome.com/4110c1f003.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+        </div>
+        <div class="content">
+            <p class="content-title">
+                문자로 보내드린
+                <br>
+                인증번호를 입력해주세요.
+            </p>
+            <p class="content-des">
+                180초 내에 입력해주세요.
+            </p>
+            <div class="content-key-box">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
+                    onkeyup="KeyUP(this)">
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/user/register-key.js"></script>
+</body>
+
+</html>

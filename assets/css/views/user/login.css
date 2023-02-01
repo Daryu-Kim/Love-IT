@@ -1,0 +1,56 @@
+@import "/assets/css/_variabled.css";
+@import "/assets/css/font.css";
+@import "/assets/css/reset.css";
+
+.wrapper {
+    overflow: hidden;
+}
+
+.video-box {
+    height: 100vh;
+    position: relative;
+}
+
+video {
+    height: 100%;
+}
+
+.video-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 85%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-control-box {
+    padding: 0 24px;
+    width: 100%;
+    position: absolute;
+    top: 77.5vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 24px;
+}
+
+.video-control-btn {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 8px;
+    line-height: 48px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
+}
+
+.video-control-terms, a {
+    color: var(--sub-color);
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: underline;
+}
