@@ -10,17 +10,18 @@
 }
 
 .content {
-    padding: 32px 24px;
+    padding: 3.2rem 2.4rem;
 }
 
 .content-title {
-    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 3.2rem;
 }
 
 .content-des {
-    margin-top: 8px;
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
     color: var(--sub-color);
 }
 
@@ -28,13 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 36px;
+    margin-top: 3.6rem;
 }
 
 .content-phone {
     border: none;
-    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: 700;
+    width: calc(100% - 2rem);
 }
 
 .content-phone:focus {
@@ -42,8 +44,8 @@
 }
 
 .content-phone-x-box {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background-color: var(--sub-color);
     display: flex;
@@ -55,5 +57,5 @@
 
 .content-phone-x-box > i {
     color: white;
-    font-size: 8px;
+    font-size: 0.8rem;
 }

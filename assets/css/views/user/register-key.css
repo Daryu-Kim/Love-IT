@@ -2,38 +2,47 @@
 @import "/assets/css/font.css";
 @import "/assets/css/reset.css";
 
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
 
 .content {
-    padding: 32px 24px;
+    padding: 3.2rem 2.4rem;
 }
 
 .content-title {
-    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 3.2rem;
 }
 
 .content-des {
-    margin-top: 8px;
+    margin-top: 0.8rem;
     color: var(--sub-color);
+    font-size: 1.4rem;
 }
 
 .content-key-box {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.6rem;
+    width: 100%;
 }
 
 .content-key {
-    border: 2px solid black;
-    border-radius: 8px;
-    font-size: 24px;
+    border: none;
+    border-bottom: 4px solid var(--sub-dark-color);
+    font-size: 2.8rem;
     font-weight: 700;
-    text-decoration: underline;
-    width: 64px;
-    height: 4px;
+    width: 4.8rem;
+    height: 6.4rem;
+    text-align: center;
 }
 
-.content-phone:focus {
-    outline: 0;
+.content-key:focus {
+    border: 4px solid var(--accent-color);
+    outline: none;
+    border-radius: 0.8rem;
 }
