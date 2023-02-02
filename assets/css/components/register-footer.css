@@ -13,11 +13,11 @@
 
 .footer-submit {
   border-radius: 0.8rem;
-  background-color: var(--sub-light-color);
   font-weight: 700;
   font-size: 1.8rem;
   padding: 1.2rem 0;
-  color: var(--sub-dark-color);
   text-align: center;
-  cursor: default;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
 }

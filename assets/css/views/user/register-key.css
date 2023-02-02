@@ -46,3 +46,24 @@
     outline: none;
     border-radius: 0.8rem;
 }
+
+.content-key-control-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.4rem;
+}
+
+.content-key-control-box > p {
+    background-color: var(--sub-light-color);
+    cursor: pointer;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.4rem;
+    color: var(--sub-dark-color);
+    border-radius: 0.8rem;
+}
+
+.content-key-control-box > p:hover {
+    color: white;
+    background-color: var(--accent-color);
+}

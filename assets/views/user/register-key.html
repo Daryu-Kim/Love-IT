@@ -8,6 +8,7 @@
     <meta name="description" content="소개팅 프로그레시브 웹앱입니다.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
+    <link rel="stylesheet" href="/assets/css/components/register-footer.css">
     <link rel="stylesheet" href="/assets/css/views/user/register-key.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
@@ -61,19 +62,26 @@
                 180초 내에 입력해주세요.
             </p>
             <div class="content-key-box">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
-                <input class="content-key" type="number" maxlength="1" oninput="MaxLengthCheck(this)"
-                    onkeyup="KeyUP(this)">
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 1)" autofocus>
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 2)">
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 3)">
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 4)">
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 5)">
+                <input class="content-key" type="text" maxlength="1" oninput="NoKorean(event, 6)">
             </div>
+            <div class="content-key-control-box">
+                <p class="content-key-control-re">
+                    인증번호 다시 요청
+                </p>
+                <p class="content-key-control-empty">
+                    다시 입력
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footer-submit">
+                인증번호 확인
+            </p>
         </div>
     </div>
     <script src="/assets/js/user/register-key.js"></script>
