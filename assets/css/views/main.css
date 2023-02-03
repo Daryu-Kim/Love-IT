@@ -7,6 +7,6 @@
 
 object {
     width: 100%;
-    height: calc(100% - 56px - 61px);
+    height: calc(100% - 56px - 56px);
     margin-top: 56px;
 }

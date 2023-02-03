@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-phone.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-birth.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -36,7 +36,7 @@
     <!-- (D) SERVICE WORKER -->
     <script>
         if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
-    </script>
+    </script>                                                   
 
     <!-- (E) STYLESHEET + JAVASCRIPT
         <link rel="stylesheet" href="YOUR-STYLES.css">
@@ -54,30 +54,27 @@
         </div>
         <div class="content">
             <p class="content-title">
-                전화번호를 입력해주세요.
-                <br>
-                가입된 계정이 있는지
-                <br>
-                확인해 드릴게요.
+                회원님의 생일은 언제인가요?
             </p>
             <p class="content-des">
-                가입 여부 확인에만 활용되며, 절대 노출되지 않아요.
+                회원님의 나이 표시에 사용되며,
+                <br>
+                이후 변경이 불가합니다.
             </p>
-            <div class="content-phone-box">
-                <input class="content-phone" type="text" placeholder="010" maxlength="11">
-                <div class="content-phone-x-box">
-                    <i class="fa-solid fa-x"></i>
-                </div>
+            <div class="content-birth-box">
+                <input class="content-birth" type="text" placeholder="연도 (2002)" maxlength="4">
+                <input class="content-birth" type="text" placeholder="월 (03)" maxlength="2">
+                <input class="content-birth" type="text" placeholder="일 ( 12)" maxlength="2">
             </div>
         </div>
         <div class="footer">
             <p class="footer-submit">
-                인증번호 요청
+                다음
             </p>
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-phone.js"></script>
+    <script type="module" src="/assets/js/user/register-gender.js"></script>
 </body>
 
 </html>

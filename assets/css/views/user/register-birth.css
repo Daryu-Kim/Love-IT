@@ -10,6 +10,7 @@
 }
 
 .content {
+    width: 100%;
     padding: 3.2rem 2.4rem;
 }
 
@@ -25,39 +26,21 @@
     color: var(--sub-color);
 }
 
-.content-phone-box {
+.content-birth-box {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin-top: 3.6rem;
 }
 
-.content-phone {
-    border: none;
-    font-size: 2.4rem;
-    font-weight: 700;
-    width: calc(100% - 2rem);
-}
-
-.content-phone:focus {
-    outline: 0;
-}
-
-.content-phone-x-box {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: var(--sub-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    cursor: pointer;
-}
-
-.content-phone-x-box>i {
-    color: white;
-    font-size: 0.8rem;
+.content-birth {
+    width: 30%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 0.8rem 0;
+    border: 1px solid red;
 }
 
 @media screen and (min-width: 1200px) {

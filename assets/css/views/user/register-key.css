@@ -5,6 +5,7 @@
 .wrapper {
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
 .content {
@@ -66,4 +67,11 @@
 .content-key-control-box > p:hover {
     color: white;
     background-color: var(--accent-color);
+}
+
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        width: 720px;
+        margin: 0 auto;
+    }
 }

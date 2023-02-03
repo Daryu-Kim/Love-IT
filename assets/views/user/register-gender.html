@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-phone.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-gender.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -54,30 +54,32 @@
         </div>
         <div class="content">
             <p class="content-title">
-                전화번호를 입력해주세요.
+                처음 오셨네요!
                 <br>
-                가입된 계정이 있는지
-                <br>
-                확인해 드릴게요.
+                회원님의 성별은 무엇인가요?
             </p>
             <p class="content-des">
-                가입 여부 확인에만 활용되며, 절대 노출되지 않아요.
+                변경이 불가하니 신중하게 선택해주세요.
             </p>
-            <div class="content-phone-box">
-                <input class="content-phone" type="text" placeholder="010" maxlength="11">
-                <div class="content-phone-x-box">
-                    <i class="fa-solid fa-x"></i>
-                </div>
+            <div class="content-gender-box">
+                <input class="content-gender-radio" type="radio" name="gender" id="woman">
+                <label for="woman" class="content-gender-label">
+                    여자
+                </label>
+                <input class="content-gender-radio" type="radio" name="gender" id="man">
+                <label for="man" class="content-gender-label">
+                    남자
+                </label>
             </div>
         </div>
         <div class="footer">
             <p class="footer-submit">
-                인증번호 요청
+                다음
             </p>
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-phone.js"></script>
+    <script type="module" src="/assets/js/user/register-gender.js"></script>
 </body>
 
 </html>

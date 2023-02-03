@@ -54,3 +54,10 @@ video {
 a {
     text-decoration: underline;
 }
+
+@media screen and (min-width: 1200px) {
+    .video-control-btn {
+        width: 720px;
+        margin: 0 auto;
+    }
+}

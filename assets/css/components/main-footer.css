@@ -5,6 +5,7 @@
 .footer {
   background-color: var(--background-color);
   width: 100vw;
+  height: 56px;
   padding: 6px 28px;
   position: fixed;
   justify-content: space-between;
@@ -28,23 +29,27 @@
 
 .footer-item-label {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-item-label:hover {
+  transform: scale(1.075);
+}
+
+.footer-item-label:active {
+  transition: 150ms;
+  transform: scale(0.95);
 }
 
 .footer > input {
   display: none;
 }
 
-.footer > label > * {
-  color: var(--sub-color);
-}
-
 .footer > label > i {
+  color: var(--sub-color);
   font-size: 24px;
-}
-
-.footer > label > p {
-  margin-top: 6px;
-  font-size: 12px;
 }
 
 @media screen and (max-width: 768px) {
