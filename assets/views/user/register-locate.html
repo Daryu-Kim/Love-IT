@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-birth.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-locate.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -54,18 +54,12 @@
         </div>
         <div class="content">
             <p class="content-title">
-                회원님의 생일은 언제인가요?
+                회원님은 asdf에 사시는군요!
             </p>
             <p class="content-des">
-                회원님의 나이 표시에 사용되며,
-                <br>
-                이후 변경이 불가합니다.
+                현재 회원님이 계신 지역의 친구들을 만날 수 있어요.
             </p>
-            <div class="content-birth-box">
-                <input class="content-birth" type="text" placeholder="연도 (2002)" maxlength="4" autofocus>
-                <input class="content-birth" type="text" placeholder="월 (03)" maxlength="2">
-                <input class="content-birth" type="text" placeholder="일 ( 12)" maxlength="2">
-            </div>
+            <div class="content-locate"></div>
         </div>
         <div class="footer">
             <p class="footer-submit">
@@ -74,7 +68,8 @@
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-birth.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd9b7e29165717aef0f1dd5530bc7213"></script>
+    <script type="module" src="/assets/js/user/register-locate.js"></script>
 </body>
 
 </html>

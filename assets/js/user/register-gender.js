@@ -23,7 +23,7 @@ footer_submit.addEventListener("click", function () {
         }
         location.href = "/assets/views/user/register-birth.html";
     } else {
-        alert("성별을 선택해주세요!");
+        alert("생일을 정확히 입력해주세요.");
     }
 });
 

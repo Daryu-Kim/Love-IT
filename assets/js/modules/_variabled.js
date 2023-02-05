@@ -1,7 +1,7 @@
 // FireBase Variables
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
-import { getFirestore} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDDwS9uL1vjmW6xPTZlv1o6mIA_45Eyd44",

@@ -26,27 +26,12 @@
     color: var(--sub-color);
 }
 
-.content-birth-box {
+.content-locate {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 30vh;
     margin-top: 3.6rem;
-}
-
-.content-birth {
-    width: 30%;
-    font-size: 1.6rem;
-    text-align: center;
-    font-weight: 500;
-    padding: 0.8rem 0;
     border: 0.2rem solid var(--sub-color);
     border-radius: 0.8rem;
-}
-
-.content-birth:focus {
-    outline: 0;
-    border-color: var(--accent-color);
 }
 
 @media screen and (min-width: 1200px) {
