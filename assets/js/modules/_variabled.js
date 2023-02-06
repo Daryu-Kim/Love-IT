@@ -17,3 +17,50 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+
+export const locate = {
+    "서울특별시": [
+        "종로구",
+        "중구",
+        "용산구",
+        "성동구",
+        "광진구",
+        "동대문구",
+        "중랑구",
+        "성북구",
+        "강북구",
+        "도봉구",
+        "노원구",
+        "은평구",
+        "서대문구",
+        "마포구",
+        "양천구",
+        "강서구",
+        "구로구",
+        "금천구",
+        "영등포구",
+        "동작구",
+        "관악구",
+        "서초구",
+        "강남구",
+        "송파구",
+        "강동구"
+    ],
+    "인천광역시": [
+        
+    ],
+    "경기도": [
+        
+    ],
+    "강원도": [
+        
+    ],
+    "대전광역시": [
+        "동구",
+        "중구",
+        "서구",
+        "유성구",
+        "대덕구"
+    ],
+
+}
