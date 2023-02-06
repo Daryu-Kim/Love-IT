@@ -3,8 +3,8 @@ import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/fireba
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_drink = document.querySelectorAll(".content-drink");
-const content_drink_label = document.querySelectorAll(".content-drink-label");
+const content_work = document.querySelectorAll(".content-work");
+const content_work_label = document.querySelectorAll(".content-work-label");
 
 /* AddEventListener */
 // Header
@@ -16,21 +16,21 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    var drink;
-    content_drink.forEach((element, index) => {
+    var work;
+    content_work.forEach((element, index) => {
         if (element.checked) {
-            drink = content_drink_label[index].innerHTML;
+            work = content_work_label[index].innerHTML;
         }
     });
-    if (drink != undefined) {
+    if (work != undefined) {
         updateDoc(doc(db, "user", GetCookie("phone")), {
-            "drink": drink
+            "work": work
         });
         setTimeout(() => {
-            location.href = "/assets/views/user/register-smoke.html";
+            location.href = "/assets/views/user/register-char.html";
         }, 1500);
     } else {
-        alert("음주량을 선택해주세요");
+        alert("직업을 선택해주세요");
     }
 
 });

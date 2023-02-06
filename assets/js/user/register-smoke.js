@@ -4,6 +4,7 @@ import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/fireba
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
 const content_smoke = document.querySelectorAll(".content-smoke");
+const content_smoke_label = document.querySelectorAll(".content-smoke-label");
 
 /* AddEventListener */
 // Header
@@ -15,34 +16,13 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    var temp, smoke;
+    var smoke;
     content_smoke.forEach((element, index) => {
         if (element.checked) {
-            // temp = index;
-            temp = element.innerHTML;
+            smoke = content_smoke_label[index].innerHTML;
         }
     });
-    // switch (temp) {
-    //     case 0:
-    //         smoke = "전혀 안함";
-    //         break;
-    //     case 1:
-    //         smoke = "술 마실 때만";
-    //         break;
-    //     case 2:
-    //         smoke = "주 1~2회";
-    //         break;
-    //     case 3:
-    //         smoke = "주 3~4회";
-    //         break;
-    //     case 4:
-    //         smoke = "주 5~7회";
-    //         break;
-    //     case 5:
-    //         smoke = "전자담배";
-    //         break;
-    // }
-    if (temp >= 0) {
+    if (smoke != undefined) {
         updateDoc(doc(db, "user", GetCookie("phone")), {
             "smoke": smoke
         });

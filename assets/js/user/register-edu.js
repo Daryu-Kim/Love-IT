@@ -3,8 +3,8 @@ import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/fireba
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_drink = document.querySelectorAll(".content-drink");
-const content_drink_label = document.querySelectorAll(".content-drink-label");
+const content_edu = document.querySelectorAll(".content-edu");
+const content_edu_label = document.querySelectorAll(".content-edu-label");
 
 /* AddEventListener */
 // Header
@@ -16,21 +16,21 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    var drink;
-    content_drink.forEach((element, index) => {
+    var edu;
+    content_edu.forEach((element, index) => {
         if (element.checked) {
-            drink = content_drink_label[index].innerHTML;
+            edu = content_edu_label[index].innerHTML;
         }
     });
-    if (drink != undefined) {
+    if (edu != undefined) {
         updateDoc(doc(db, "user", GetCookie("phone")), {
-            "drink": drink
+            "edu": edu
         });
         setTimeout(() => {
-            location.href = "/assets/views/user/register-smoke.html";
+            location.href = "/assets/views/user/register-work.html";
         }, 1500);
     } else {
-        alert("음주량을 선택해주세요");
+        alert("학력을 선택해주세요");
     }
 
 });

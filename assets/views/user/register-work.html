@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
+    <title>Lovit - 러빗</title>
+    <meta charset="utf-8">
+    <meta name="description" content="소개팅 프로그레시브 웹앱입니다.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <link rel="stylesheet" href="/assets/css/components/register-header.css">
+    <link rel="stylesheet" href="/assets/css/components/register-footer.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-work.css">
+
+    <!-- (B) ICONS & PLATFORM SPECIFIC -->
+    <!-- (B1) GOOD OLD FAVICON -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- (B2) ANDROID/CHROME -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="white">
+
+    <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hello World">
+
+    <!-- (B4) WINDOWS -->
+    <meta name="msapplication-TileImage" content="icon-512.png">
+    <meta name="msapplication-TileColor" content="#FFF">
+
+    <!-- (C) WEB APP MANIFEST -->
+    <!-- https://web.dev/add-manifest/ -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- (D) SERVICE WORKER -->
+    <script>
+        if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
+    </script>                                                   
+
+    <!-- (E) STYLESHEET + JAVASCRIPT
+        <link rel="stylesheet" href="YOUR-STYLES.css">
+        <script defer src="YOUR-SCRIPTS.js"></script>
+        -->
+    <script src="https://kit.fontawesome.com/4110c1f003.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+        </div>
+        <div class="content">
+            <p class="content-title">
+                어떤 일을 하고 계신가요?
+            </p>
+            <p class="content-des">
+
+            </p>
+            <div class="content-work-box">
+                <input type="radio" name="work" class="content-work" id="none">
+                <label for="none" class="content-work-label">학생</label>
+                <input type="radio" name="work" class="content-work" id="1">
+                <label for="1" class="content-work-label">아르바이트</label>
+                <input type="radio" name="work" class="content-work" id="2">
+                <label for="2" class="content-work-label">취업준비중</label>
+                <input type="radio" name="work" class="content-work" id="3">
+                <label for="3" class="content-work-label">프리랜서</label>
+                <input type="radio" name="work" class="content-work" id="4">
+                <label for="4" class="content-work-label">회사원</label>
+                <input type="radio" name="work" class="content-work" id="5">
+                <label for="5" class="content-work-label">자영업</label>
+                <input type="radio" name="work" class="content-work" id="6">
+                <label for="6" class="content-work-label">전문직</label>
+                <input type="radio" name="work" class="content-work" id="7">
+                <label for="7" class="content-work-label">의료직</label>
+                <input type="radio" name="work" class="content-work" id="8">
+                <label for="8" class="content-work-label">교육직</label>
+                <input type="radio" name="work" class="content-work" id="9">
+                <label for="9" class="content-work-label">금융직</label>
+                <input type="radio" name="work" class="content-work" id="10">
+                <label for="10" class="content-work-label">연구, 기술직</label>
+                <input type="radio" name="work" class="content-work" id="11">
+                <label for="11" class="content-work-label">공무원</label>
+                <input type="radio" name="work" class="content-work" id="12">
+                <label for="12" class="content-work-label">IT</label>
+                <input type="radio" name="work" class="content-work" id="13">
+                <label for="13" class="content-work-label">군인</label>
+                <input type="radio" name="work" class="content-work" id="14">
+                <label for="14" class="content-work-label">기타</label>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footer-submit">
+                다음
+            </p>
+        </div>
+    </div>
+    <script type="module" src="/assets/js/modules/_variabled.js"></script>
+    <script type="module" src="/assets/js/user/register-work.js"></script>
+</body>
+
+</html>

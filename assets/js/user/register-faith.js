@@ -1,9 +1,10 @@
-import { db } from "../modules/_variabled.js";
+import { db, GetCookie } from "../modules/_variabled.js";
 import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
 const content_faith = document.querySelectorAll(".content-faith");
+const content_faith_label = document.querySelectorAll(".content-faith-label");
 
 /* AddEventListener */
 // Header
@@ -15,33 +16,14 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    var temp, faith;
+    var faith;
     content_faith.forEach((element, index) => {
         if (element.checked) {
-            temp = index;
+            faith = content_faith_label[index].innerHTML;
         }
     });
-    switch (temp) {
-        case 0:
-            faith = "무교";
-            break;
-        case 1:
-            faith = "기독교";
-            break;
-        case 2:
-            faith = "불교";
-            break;
-        case 3:
-            faith = "천주교";
-            break;
-        case 4:
-            faith = "원불교";
-            break;
-        case 5:
-            faith = "기타";
-            break;
-    }
-    if (temp >= 0) {
+
+    if (faith != undefined) {
         updateDoc(doc(db, "user", GetCookie("phone")), {
             "faith": faith
         });
@@ -55,11 +37,3 @@ footer_submit.addEventListener("click", function () {
 });
 
 /* Function */
-function SetCookie(name, value) {
-    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";path=/";
-}
-
-function GetCookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value ? value[2] : null;
-}
