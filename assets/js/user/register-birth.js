@@ -1,5 +1,5 @@
 import { db } from "/assets/js/modules/_variabled.js"
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
@@ -38,8 +38,12 @@ Lastday();
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    SetCookie("birth", `${content_birth[0].value}-${content_birth[1].value}-${content_birth[2].value}`);
-    location.href = "/assets/views/user/register-locate.html";
+    updateDoc(doc(db, "user", GetCookie("phone")), {
+        "birth": `${content_birth[0].value}-${content_birth[1].value}-${content_birth[2].value}`
+    });
+    setTimeout(() => {
+        location.href = "/assets/views/user/register-locate.html";
+    }, 1500);
 });
 
 /* Function */

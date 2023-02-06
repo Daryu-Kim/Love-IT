@@ -1,5 +1,5 @@
-import { db } from "/assets/js/modules/_variabled.js"
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { GetCookie, db } from "../modules/_variabled.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
@@ -17,22 +17,22 @@ header_prev.addEventListener("click", function () {
 footer_submit.addEventListener("click", function () {
     if (content_radio[0].checked || content_radio[1].checked) {
         if (content_radio[0].checked) {
-            SetCookie("gender", "여자");
+            updateDoc(doc(db, "user", GetCookie("phone")), {
+                "gender": "W"
+            });
+            // SetCookie("gender", "여자");
         } else {
-            SetCookie("gender", "남자");
+            updateDoc(doc(db, "user", GetCookie("phone")), {
+                "gender": "M"
+            });
+            // SetCookie("gender", "남자");
         }
-        location.href = "/assets/views/user/register-birth.html";
+        setTimeout(() => {
+            location.href = "/assets/views/user/register-birth.html";
+        }, 1500);
     } else {
-        alert("생일을 정확히 입력해주세요.");
+        alert("성별을 선택해주세요.");
     }
 });
 
 /* Function */
-function SetCookie(name, value) {
-    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";path=/";
-}
-
-function GetCookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
-}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-locate.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-drink.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -54,16 +54,20 @@
         </div>
         <div class="content">
             <p class="content-title">
-                거주하고 계신 지역을
-                <br>
-                선택해주세요
+                음주를 즐기시나요?
             </p>
             <p class="content-des">
-                선택하신 지역 위주로 친구들을 만날 수 있어요.
+                러브잇은 안전한 음주 문화를 지지합니다:)
             </p>
-            <div class="content-locate-box">
-                <select class="content-locate" id="select-si"></select>
-                <select class="content-locate" id="select-gu"></select>
+            <div class="content-drink-box">
+                <input type="radio" name="drink" class="content-drink" id="none">
+                <label for="none" class="content-drink-label">전혀 안함</label>
+                <input type="radio" name="drink" class="content-drink" id="1">
+                <label for="1" class="content-drink-label">주 1~2회</label>
+                <input type="radio" name="drink" class="content-drink" id="2">
+                <label for="2" class="content-drink-label">주 3~4회</label>
+                <input type="radio" name="drink" class="content-drink" id="3">
+                <label for="3" class="content-drink-label">주 5~7회</label>
             </div>
         </div>
         <div class="footer">
@@ -73,7 +77,7 @@
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-locate.js"></script>
+    <script type="module" src="/assets/js/user/register-drink.js"></script>
 </body>
 
 </html>

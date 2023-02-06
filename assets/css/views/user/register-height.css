@@ -1,0 +1,58 @@
+@import "/assets/css/_variabled.css";
+@import "/assets/css/font.css";
+@import "/assets/css/reset.css";
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+}
+
+.content-title, span {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+}
+
+span {
+    color: var(--accent-color);
+}
+
+.content-des {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--sub-color);
+}
+
+.content-height-box {
+    width: 100%;
+    margin-top: 3.6rem;
+}
+
+.content-height {
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 0.8rem 0;
+    border: 0.2rem solid var(--sub-color);
+    border-radius: 0.8rem;
+}
+
+.content-height:focus {
+    outline: 0;
+    border-color: var(--accent-color);
+}
+
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        width: 720px;
+        margin: 0 auto;
+    }
+}

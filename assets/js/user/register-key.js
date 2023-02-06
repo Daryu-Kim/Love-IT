@@ -1,5 +1,6 @@
 import { db } from "/assets/js/modules/_variabled.js"
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { GetCookie } from "../modules/_variabled.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
@@ -74,15 +75,22 @@ function MakeRequestCode() {
 }
 
 function CheckAccount() {
-    getDoc(doc(db, "user", `${user_phone_num}`)).then(docSnap => {
+    getDoc(doc(db, "user", user_phone_num)).then(docSnap => {
         if (docSnap.exists()) {
             alert("가입되어 있는 사용자입니다");
             location.href = "/assets/views/main.html";
         } else {
             alert("가입되어 있지 않은 사용자입니다");
-            location.href = "/assets/views/user/register-gender.html";
+            setDoc(doc(db, "user", user_phone_num), {});
+            setTimeout(() =>
+                location.href = "/assets/views/user/register-gender.html"
+            , 3000);
         }
     });
+}
+
+function CreateID(collection, document_name) {
+    setDoc(doc(db, collection, document_name), {});
 }
 
 function NoKorean(element, index) {
@@ -110,13 +118,4 @@ function StartTimer(count, display) {
         }
     }, 1000);
     isRunning = true;
-}
-
-function SetCookie(name, value) {
-    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";path=/";
-}
-
-function GetCookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
 }

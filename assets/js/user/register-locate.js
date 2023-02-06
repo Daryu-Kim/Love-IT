@@ -1,6 +1,5 @@
-import { db } from "/assets/js/modules/_variabled.js"
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
-import { locate } from "../modules/_variabled.js";
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { db, locate } from "../modules/_variabled.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
@@ -35,8 +34,12 @@ content_si.addEventListener("change", function () {
 footer_submit.addEventListener("click", function () {
     if (content_si.value != "") {
         if (content_gu.value != "") {
-            SetCookie("locate", `${content_si.value} ${content_gu.value}`);
-            location.href = "/assets/views/user/register-locate.html";
+            updateDoc(doc(db, "user", GetCookie("phone")), {
+                "locate": `${content_si.value} ${content_gu.value}`
+            });
+            setTimeout(() => {
+                location.href = "/assets/views/user/register-nick.html";
+            }, 1500);
         } else {
             alert("'시 · 군 · 구'를 선택해주세요");
             content_gu.focus();

@@ -1,7 +1,7 @@
 // FireBase Variables
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDDwS9uL1vjmW6xPTZlv1o6mIA_45Eyd44",
@@ -17,6 +17,44 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+
+export const min_height = 140;
+export const max_height = 200;
+
+export function SetCookie(name, value) {
+    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";path=/";
+}
+
+export function GetCookie(name) {
+    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+}
+
+// export function GetDocumentExists(collection, document) {
+//     getDoc(doc(db, collection, document)).then(docSnap => {
+//         if (docSnap.exists()) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     });
+// }
+
+// export function GetDocumentAllData(collection, document) {
+//     getDoc(doc(db, collection, document)).then(docSnap => {
+//         if (docSnap.exists()) {
+//             return docSnap;
+//         } else {
+//             console.log("문서를 불러오지 못했습니다!");
+//         }
+//     });
+// }
+
+// export function CreateID(collection, document_name) {
+//     setDoc(doc(db, collection, document_name), {
+//         id: document_name
+//     });
+// }
 
 export const locate = {
     "서울특별시": [

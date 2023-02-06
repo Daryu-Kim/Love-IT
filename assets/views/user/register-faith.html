@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-locate.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-faith.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -54,16 +54,24 @@
         </div>
         <div class="content">
             <p class="content-title">
-                거주하고 계신 지역을
-                <br>
-                선택해주세요
+                종교가 있으신가요?
             </p>
             <p class="content-des">
-                선택하신 지역 위주로 친구들을 만날 수 있어요.
+                러브잇은 편견없는 종교 생활을 지지합니다:)
             </p>
-            <div class="content-locate-box">
-                <select class="content-locate" id="select-si"></select>
-                <select class="content-locate" id="select-gu"></select>
+            <div class="content-faith-box">
+                <input type="radio" name="faith" class="content-faith" id="none">
+                <label for="none" class="content-faith-label">무교</label>
+                <input type="radio" name="faith" class="content-faith" id="1">
+                <label for="1" class="content-faith-label">기독교</label>
+                <input type="radio" name="faith" class="content-faith" id="2">
+                <label for="2" class="content-faith-label">불교</label>
+                <input type="radio" name="faith" class="content-faith" id="3">
+                <label for="3" class="content-faith-label">천주교</label>
+                <input type="radio" name="faith" class="content-faith" id="4">
+                <label for="4" class="content-faith-label">원불교</label>
+                <input type="radio" name="faith" class="content-faith" id="5">
+                <label for="5" class="content-faith-label">기타</label>
             </div>
         </div>
         <div class="footer">
@@ -73,7 +81,7 @@
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-locate.js"></script>
+    <script type="module" src="/assets/js/user/register-faith.js"></script>
 </body>
 
 </html>

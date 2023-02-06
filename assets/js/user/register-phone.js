@@ -1,3 +1,5 @@
+import { SetCookie } from "../modules/_variabled.js";
+
 const x_box = document.querySelector(".content-phone-x-box");
 const phone = document.querySelector(".content-phone");
 const header_prev = document.querySelector(".header-prev");
@@ -56,13 +58,4 @@ function OnlyNumber(element) {
         footer_submit.style.color = "var(--sub-dark-color)";
         footer_submit.style.cursor = "default";
     }
-}
-
-function SetCookie(name, value) {
-    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";path=/";
-}
-
-function GetCookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
 }
