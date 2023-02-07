@@ -30,6 +30,11 @@ export function GetCookie(name) {
     return value? value[2] : null;
 }
 
+export const hobby_list = [
+    "영화", "넷플릭스", "드라마 정주행", "TV 예능",
+    "카페", "홈카페", "코인노래방", "맥주"
+]
+
 // export function GetDocumentExists(collection, document) {
 //     getDoc(doc(db, collection, document)).then(docSnap => {
 //         if (docSnap.exists()) {

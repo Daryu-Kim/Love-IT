@@ -28,7 +28,7 @@
     color: var(--sub-color);
 }
 
-.content-char-box {
+.content-hobby-box {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 0.8rem;
@@ -36,16 +36,16 @@
     width: 100%;
 }
 
-.content-char-check {
+.content-hobby-check {
     display: none;
 }
 
-.content-char-check:checked + label {
+.content-hobby-check:checked + label {
     background-color: var(--accent-color);
     color: white;
 }
 
-.content-char-label {
+.content-hobby-label {
     height: fit-content;
     font-size: 1.4rem;
     text-align: center;

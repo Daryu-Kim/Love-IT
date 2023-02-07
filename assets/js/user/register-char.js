@@ -3,8 +3,8 @@ import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/fireba
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_work = document.querySelectorAll(".content-work");
-const content_work_label = document.querySelectorAll(".content-work-label");
+const content_char = document.querySelectorAll(".content-char-check");
+const content_char_label = document.querySelectorAll(".content-char-label");
 
 /* AddEventListener */
 // Header
@@ -16,21 +16,27 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    var work;
-    content_work.forEach((element, index) => {
+    var char = [], final_char;
+    content_char.forEach((element, index) => {
         if (element.checked) {
-            work = content_work_label[index].innerHTML;
+            char.push(content_char_label[index].innerHTML);
         }
     });
-    if (work != undefined) {
+    if (char != undefined) {
+        for (let i = 0; i < char.length; i++) {
+            final_char += char[i]+",";
+        }
+        final_char = char.filter((element) =>
+            element !== undefined && element !== null && element !== ''
+        );
         updateDoc(doc(db, "user", GetCookie("phone")), {
-            "work": work
+            "char": final_char
         });
         setTimeout(() => {
-            location.href = "/assets/views/user/register-char.html";
+            location.href = "/assets/views/user/register-hobby.html";
         }, 1500);
     } else {
-        alert("직업을 선택해주세요");
+        alert("성격을 선택해주세요");
     }
 
 });
