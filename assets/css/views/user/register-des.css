@@ -28,7 +28,22 @@
     color: var(--sub-color);
 }
 
-.content-style-box {
+.content-des-area {
+    width: 100%;
+    margin-top: 3.6rem;
+    padding: 0.8rem 1.6rem;
+    height: 30vh;
+    border: 2px solid var(--sub-color);
+    font-size: 1.8rem;
+    border-radius: 0.8rem;
+}
+
+.content-des-area:focus {
+    outline: 0;
+    border-color: var(--accent-color);
+}
+
+/* .content-style-box {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 0.8rem;
@@ -54,7 +69,7 @@
     border-radius: 100px;
     cursor: pointer;
     font-weight: 500;
-}
+} */
 
 @media screen and (min-width: 1200px) {
     .wrapper {

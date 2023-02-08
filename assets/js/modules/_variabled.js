@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDDwS9uL1vjmW6xPTZlv1o6mIA_45Eyd44",
@@ -17,6 +18,7 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 export const min_height = 140;
 export const max_height = 200;
@@ -73,6 +75,10 @@ export const char_list = [
 export const hobby_list = [
     "영화", "넷플릭스", "드라마 정주행", "TV 예능",
     "카페", "홈카페", "코인노래방", "맥주"
+]
+
+export const style_list = [
+    "귀여운", "자상한", "옷 잘 입는"
 ]
 
 // export function GetDocumentExists(collection, document) {
