@@ -38,7 +38,7 @@ Lastday();
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    updateDoc(doc(db, "user", GetCookie("phone")), {
+    updateDoc(doc(db, "user", GetCookie("id")), {
         "birth": `${content_birth[0].value}-${content_birth[1].value}-${content_birth[2].value}`
     });
     setTimeout(() => {

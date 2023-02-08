@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
-    <link rel="stylesheet" href="/assets/css/views/user/register-key.css">
+    <link rel="stylesheet" href="/assets/css/views/user/register-hobby.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
     <!-- (B1) GOOD OLD FAVICON -->
@@ -36,7 +36,7 @@
     <!-- (D) SERVICE WORKER -->
     <script>
         if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
-    </script>
+    </script>                                                   
 
     <!-- (E) STYLESHEET + JAVASCRIPT
         <link rel="stylesheet" href="YOUR-STYLES.css">
@@ -54,38 +54,21 @@
         </div>
         <div class="content">
             <p class="content-title">
-                문자로 보내드린
-                <br>
-                인증번호를 입력해주세요.
+                어떤 취미 생활을 즐기시나요?
             </p>
             <p class="content-des">
-                180초 내에 입력해주세요.
+                여러 개 선택할 수 있어요:)
             </p>
-            <div class="content-key-box">
-                <input class="content-key" type="text" maxlength="1" autofocus>
-                <input class="content-key" type="text" maxlength="1">
-                <input class="content-key" type="text" maxlength="1">
-                <input class="content-key" type="text" maxlength="1">
-                <input class="content-key" type="text" maxlength="1">
-                <input class="content-key" type="text" maxlength="1">
-            </div>
-            <div class="content-key-control-box">
-                <p class="content-key-control-re">
-                    인증번호 다시 요청
-                </p>
-                <p class="content-key-control-empty">
-                    다시 입력
-                </p>
-            </div>
+            <div class="content-hobby-box"></div>
         </div>
         <div class="footer">
             <p class="footer-submit">
-                인증번호 확인
+                다음
             </p>
         </div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/register-key.js"></script>
+    <script type="module" src="/assets/js/user/register-hobby.js"></script>
 </body>
 
 </html>

@@ -16,8 +16,8 @@ header_prev.addEventListener("click", function () {
 // Footer
 footer_submit.addEventListener("click", function () {
     if (content_nick.value != "") {
-        updateDoc(doc(db, "user", GetCookie("phone")), {
-            "name": content_nick.value
+        updateDoc(doc(db, "user", GetCookie("id")), {
+            "nick": content_nick.value
         });
         setTimeout(() => {
             location.href = "/assets/views/user/register-height.html";

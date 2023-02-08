@@ -34,7 +34,7 @@ content_si.addEventListener("change", function () {
 footer_submit.addEventListener("click", function () {
     if (content_si.value != "") {
         if (content_gu.value != "") {
-            updateDoc(doc(db, "user", GetCookie("phone")), {
+            updateDoc(doc(db, "user", GetCookie("id")), {
                 "locate": `${content_si.value} ${content_gu.value}`
             });
             setTimeout(() => {

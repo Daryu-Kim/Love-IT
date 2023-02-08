@@ -1,10 +1,9 @@
-import { db } from "../modules/_variabled.js";
+import { db, char_list } from "../modules/_variabled.js";
 import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_char = document.querySelectorAll(".content-char-check");
-const content_char_label = document.querySelectorAll(".content-char-label");
+const content_char_box = document.querySelector(".content-char-box");
 
 /* AddEventListener */
 // Header
@@ -13,9 +12,29 @@ header_prev.addEventListener("click", function () {
 });
 
 // Content
+for (let i = 0; i < char_list.length; i++) {
+    let create_checkbox = document.createElement("input");
+    let create_label = document.createElement("label");
+
+    // Checkbox Setting
+    create_checkbox.setAttribute("id", `${i}`);
+    create_checkbox.setAttribute("type", "checkbox");
+    create_checkbox.classList.add("content-char-check");
+
+    // Label Setting
+    create_label.setAttribute("for", `${i}`);
+    create_label.innerHTML = char_list[i];
+    create_label.classList.add("content-char-label");
+
+    content_char_box.appendChild(create_checkbox);
+    content_char_box.appendChild(create_label);
+}
 
 // Footer
 footer_submit.addEventListener("click", function () {
+    const content_char = document.querySelectorAll(".content-char-check");
+    const content_char_label = document.querySelectorAll(".content-char-label");
+
     var char = [], final_char;
     content_char.forEach((element, index) => {
         if (element.checked) {
@@ -29,7 +48,8 @@ footer_submit.addEventListener("click", function () {
         final_char = char.filter((element) =>
             element !== undefined && element !== null && element !== ''
         );
-        updateDoc(doc(db, "user", GetCookie("phone")), {
+        console.log(char, final_char)
+        updateDoc(doc(db, "user", GetCookie("id")), {
             "char": final_char
         });
         setTimeout(() => {

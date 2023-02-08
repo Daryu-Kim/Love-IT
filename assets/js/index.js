@@ -15,7 +15,7 @@ window.onload = function () {
 }
 
 function LoginCheck() {
-  var token = GetCookie("phone");
+  var token = GetCookie("id");
   getDoc(doc(db, "user", `${token}`)).then(docSnap => {
     if (docSnap.exists()) {
       isLogined = true;

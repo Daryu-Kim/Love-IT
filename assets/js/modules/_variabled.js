@@ -30,6 +30,46 @@ export function GetCookie(name) {
     return value? value[2] : null;
 }
 
+export const user_data_list = [
+    "phone", "gender", "birth", "locate",
+    "nick", "height", "faith", "drink",
+    "smoke", "char", "hobby", "style"
+]
+
+export const faith_list = [
+    "무교", "기독교", "불교", "천주교",
+    "원불교", "기타"
+]
+
+export const smoke_list = [
+    "전혀 안함", "술 마실 때만", "주 1~2회", "주 3~4회", "주 5~7회", "전자담배"
+]
+
+export const drink_list = [
+    "전혀 안함", "주 1~2회", "주 3~4회", "주 5~7회"
+]
+
+export const edu_list = [
+    "중학교 이하", "고등학교 이하", "전문대 이하", "대학교 이하",
+    "대학원 이상"
+]
+
+export const work_list = [
+    "학생", "아르바이트", "취업준비중", "프리랜서",
+    "회사원", "자영업", "전문직", "의료직",
+    "교육직", "금융직", "연구, 기술직", "공무원",
+    "IT", "군인", "기타"
+]
+
+export const char_list = [
+    "활발한", "조용한", "애교가 넘치는", "어른스러운",
+    "열정적인", "침착한", "또라이 같은", "예의 바른",
+    "유머러스한", "진지한", "자신감 넘치는", "허세 없는",
+    "엉뚱한", "지적인", "성실한", "자유로운",
+    "감성적인", "꼼꼼한", "논리적인", "즉흥적인",
+    "소심한", "쿨한"
+]
+
 export const hobby_list = [
     "영화", "넷플릭스", "드라마 정주행", "TV 예능",
     "카페", "홈카페", "코인노래방", "맥주"

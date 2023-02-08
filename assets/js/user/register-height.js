@@ -34,7 +34,7 @@ for (let i = min_height; i <= max_height; i++) {
 // Footer
 footer_submit.addEventListener("click", function () {
     if (content_height.value != "") {
-        updateDoc(doc(db, "user", GetCookie("phone")), {
+        updateDoc(doc(db, "user", GetCookie("id")), {
             "height": content_height.value
         });
         setTimeout(() => {

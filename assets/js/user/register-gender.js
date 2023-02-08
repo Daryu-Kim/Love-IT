@@ -23,7 +23,7 @@ footer_submit.addEventListener("click", function () {
         }
     });
     if (gender != undefined) {
-        updateDoc(doc(db, "user", GetCookie("phone")), {
+        updateDoc(doc(db, "user", GetCookie("id")), {
             "gender": gender
         });
         setTimeout(() => {

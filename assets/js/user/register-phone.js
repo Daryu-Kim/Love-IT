@@ -1,4 +1,5 @@
-import { SetCookie } from "../modules/_variabled.js";
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { db, GetCookie } from "../modules/_variabled.js";
 
 const x_box = document.querySelector(".content-phone-x-box");
 const phone = document.querySelector(".content-phone");
@@ -27,8 +28,12 @@ x_box.addEventListener("click", function() {
 
 footer_submit.addEventListener("click", function() {
     if (footer_submit.style.cursor == "pointer") {
-        SetCookie("phone", phone.value);
-        location.href = "/assets/views/user/register-key.html";
+        updateDoc(doc(db, "user", GetCookie("id")), {
+            "phone": phone.value
+        });
+        setTimeout(() => {
+            location.href = "/assets/views/user/register-gender.html";
+        }, 1500);
     }
 });
 
