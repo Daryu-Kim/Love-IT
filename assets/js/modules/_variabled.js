@@ -35,7 +35,8 @@ export function GetCookie(name) {
 export const user_data_list = [
     "phone", "gender", "birth", "locate",
     "nick", "height", "faith", "drink",
-    "smoke", "char", "hobby", "style"
+    "smoke", "char", "hobby", "style",
+    "des", "photo"
 ]
 
 export const faith_list = [

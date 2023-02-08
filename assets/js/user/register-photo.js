@@ -3,7 +3,7 @@ import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/fireba
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_photo = document.querySelectorAll(".content-photo");
+const content_photo_label = document.querySelectorAll(".content-photo-label");
 const content_photo_upload = document.querySelectorAll(".content-photo-upload");
 
 
@@ -16,15 +16,17 @@ header_prev.addEventListener("click", function () {
 
 // Content
 content_photo_upload.forEach((element, index) => {
-    element.addEventListener("change", function(e, file) {
-        var files = e.currentTarget.files;
-        console.log(typeof files, files);
+    element.addEventListener("change", function(e) {
+        const selected_file = [...element.files];
+        const file_reader = new FileReader();
 
-        const img = document.createElement('img');
-        img.setAttribute('src', e.target.result)
-        img.setAttribute('data-file', file.name)
-        content_photo[index].appendChild(img);
-    })
+        file_reader.readAsDataURL(selected_file[0]);
+        file_reader.onload = function() {
+            content_photo_label[index].style.backgroundColor = 'none'
+            content_photo_label[index].style.backgroundImage = `url(${file_reader.result})`;
+        };
+        console.log(selected_file)
+    });
 })
 
 // Footer
