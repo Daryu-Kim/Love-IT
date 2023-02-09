@@ -46,7 +46,8 @@ video {
     background-image: linear-gradient(to right, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
 }
 
-.video-control-terms, a {
+.video-control-terms,
+a {
     color: var(--sub-color);
     text-align: center;
     font-size: 1.4rem;
@@ -79,7 +80,7 @@ a {
 
 .install-app-box {
     cursor: pointer;
-    padding: 0.4rem 1.2rem;
+    padding: 0.4rem 1.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,14 +89,14 @@ a {
     background-image: linear-gradient(to right, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
 }
 
-.install-app-box > p {
+.install-app-box>p {
     font-size: 1.6rem;
     color: white;
     font-weight: 500;
 }
 
-.install-app-box > i {
-    font-size: 1.8rem;
+.install-app-box>i {
+    font-size: 1.6rem;
     color: white;
 }
 
@@ -104,4 +105,4 @@ a {
         width: 720px;
         margin: 0 auto;
     }
-}
+} 

@@ -3,7 +3,7 @@ import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/f
 
 const start_btn = document.querySelector(".video-control-btn");
 const install_app_container = document.querySelector(".install-app-btn-container");
-const install_app = document.querySelector(".install-app-btn-container > p");
+const install_app = document.querySelector(".install-app-box");
 
 let defferred_prompt;
 
@@ -11,10 +11,30 @@ Kakao.init('dd9b7e29165717aef0f1dd5530bc7213');
 Kakao.Auth.logout();
 
 window.addEventListener('beforeinstallprompt', (e) => {
-    install_app_container.style.display = "flex";
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
+    // Stash the event so it can be triggered later.
     defferred_prompt = e;
-})
+    // Update UI to notify the user they can add to home screen
+    install_app_container.style.display = "flex";
+  
+    install_app.addEventListener('click', (e) => {
+      // hide our user interface that shows our A2HS button
+      
+      // Show the prompt
+      defferred_prompt.prompt();
+      // Wait for the user to respond to the prompt
+      defferred_prompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          defferred_prompt = null;
+        });
+    });
+  });
+
 
 install_app.addEventListener("click", async () => {
     if (defferred_prompt !== null) {
