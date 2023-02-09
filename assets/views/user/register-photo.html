@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/register-header.css">
     <link rel="stylesheet" href="/assets/css/components/register-footer.css">
+    <link rel="stylesheet" href="/assets/css/components/toast.css">
     <link rel="stylesheet" href="/assets/css/views/user/register-photo.css">
 
     <!-- (B) ICONS & PLATFORM SPECIFIC -->
@@ -59,23 +60,24 @@
                 프로필 사진을 업로드 해주세요
             </p>
             <p class="content-des">
-                얼굴이 보이는 사진 3장은 필수입니:)
+                얼굴이 보이는 사진 1장은 필수입니다:)
             </p>
             <div class="content-photo-box">
                 <input type="file" id="0" class="content-photo-upload" accept="image/*">
                 <label for="0" class="content-photo-label">
                     <i class="fa-solid fa-plus"></i>
+                    <p class="content-photo-p">필수</p>
                 </label>
-                <input type="file" id="0" class="content-photo-upload" accept="image/*">
-                <label for="0" class="content-photo-label"></label>
-                <input type="file" id="0" class="content-photo-upload" accept="image/*">
-                <label for="0" class="content-photo-label"></label>
-                <input type="file" id="0" class="content-photo-upload" accept="image/*">
-                <label for="0" class="content-photo-label"></label>
-                <input type="file" id="0" class="content-photo-upload" accept="image/*">
-                <label for="0" class="content-photo-label"></label>
-                <input type="file" id="0" class="content-photo-upload" accept="image/*">
-                <label for="0" class="content-photo-label"></label>
+                <input type="file" id="1" class="content-photo-upload" accept="image/*">
+                <label for="1" class="content-photo-label">
+                    <i class="fa-solid fa-plus"></i>
+                    <p class="content-photo-p option">선택</p>
+                </label>
+                <input type="file" id="2" class="content-photo-upload" accept="image/*">
+                <label for="2" class="content-photo-label">
+                    <i class="fa-solid fa-plus"></i>
+                    <p class="content-photo-p option">선택</p>
+                </label>
             </div>
         </div>
         <div class="footer">
@@ -83,9 +85,11 @@
                 다음
             </p>
         </div>
+        <div class="toast"></div>
     </div>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
     <script type="module" src="/assets/js/user/register-photo.js"></script>
+    <script type="module" src="/assets/js/modules/toast.js"></script>
 </body>
 
 </html>

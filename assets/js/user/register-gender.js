@@ -1,4 +1,5 @@
 import { updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { Toast } from "../modules/toast.js";
 import { GetCookie, db } from "../modules/_variabled.js";
 
 const header_prev = document.querySelector(".header-prev");
@@ -30,7 +31,7 @@ footer_submit.addEventListener("click", function () {
             location.href = "/assets/views/user/register-birth.html";
         }, 1500);
     } else {
-        alert("성별을 선택해주세요");
+        Toast("성별을 선택해주세요!");
     }
 });
 

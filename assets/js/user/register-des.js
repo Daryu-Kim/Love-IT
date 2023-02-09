@@ -1,10 +1,10 @@
-import { db } from "/assets/js/modules/_variabled.js"
+import { db } from "../modules/_variabled.js";
 import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
-import { Toast } from "../modules/toast";
+import { Toast } from "../modules/toast.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
-const content_nick = document.querySelector(".content-nick");
+const content_des_area = document.querySelector(".content-des-area");
 
 /* AddEventListener */
 // Header
@@ -16,16 +16,18 @@ header_prev.addEventListener("click", function () {
 
 // Footer
 footer_submit.addEventListener("click", function () {
-    if (content_nick.value != "") {
+    console.log(content_des_area.value)
+    if (content_des_area.value != "") {
+        var des_replace = content_des_area.value.split(`\n`);
         updateDoc(doc(db, "user", GetCookie("id")), {
-            "nick": content_nick.value
+            "des": des_replace
         });
         setTimeout(() => {
-            location.href = "/assets/views/user/register-height.html";
+            location.href = "/assets/views/user/register-photo.html";
         }, 1500);
     } else {
-        Toast("닉네임을 입력해주세요");
-        content_nick.focus();
+        Toast("자기소개를 입력해주세요!");
+        content_des_area.focus();
     }
 });
 

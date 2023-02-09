@@ -1,4 +1,5 @@
 import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { Toast } from "../modules/toast.js";
 import { db, locate } from "../modules/_variabled.js";
 
 const header_prev = document.querySelector(".header-prev");
@@ -41,11 +42,11 @@ footer_submit.addEventListener("click", function () {
                 location.href = "/assets/views/user/register-nick.html";
             }, 1500);
         } else {
-            alert("'시 · 군 · 구'를 선택해주세요");
+            Toast("'시 · 군 · 구'를 선택해주세요");
             content_gu.focus();
         }
     } else {
-        alert("'시 · 도'를 선택해주세요");
+        Toast("'시 · 도'를 선택해주세요");
         content_si.focus();
     }
 });

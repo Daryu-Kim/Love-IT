@@ -36,7 +36,7 @@ export const user_data_list = [
     "phone", "gender", "birth", "locate",
     "nick", "height", "faith", "drink",
     "smoke", "char", "hobby", "style",
-    "des", "photo"
+    "des", "photo", "validate"
 ]
 
 export const faith_list = [

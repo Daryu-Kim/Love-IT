@@ -48,6 +48,9 @@ function CheckAccount(id) {
                     break;
                 }
             }
+            if(data[user_data_list.length-1] == false) {
+                chk--; 
+            }
             if (chk == user_data_list.length) {
                 console.log(chk);
                 location.href = "/assets/views/main.html";

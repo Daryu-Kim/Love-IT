@@ -1,5 +1,6 @@
 import { db, style_list } from "../modules/_variabled.js";
 import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { Toast } from "../modules/toast.js";
 
 const header_prev = document.querySelector(".header-prev");
 const footer_submit = document.querySelector(".footer-submit");
@@ -55,7 +56,7 @@ footer_submit.addEventListener("click", function () {
             location.href = "/assets/views/user/register-des.html";
         }, 1500);
     } else {
-        alert("선호하는 스타일을 선택해주세요");
+        Toast("선호하는 스타일을 선택해주세요");
     }
 
 });
