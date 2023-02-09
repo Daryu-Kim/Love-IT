@@ -42,7 +42,7 @@ footer_submit.addEventListener("click", function () {
             char.push(content_char_label[index].innerHTML);
         }
     });
-    if (char != undefined) {
+    if (char != undefined && char != null && char != "") {
         for (let i = 0; i < char.length; i++) {
             final_char += char[i]+",";
         }

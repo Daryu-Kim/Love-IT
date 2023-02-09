@@ -3,6 +3,7 @@
 @import "/assets/css/reset.css";
 
 .wrapper {
+    position: relative;
     overflow: hidden;
 }
 
@@ -53,6 +54,49 @@ video {
 
 a {
     text-decoration: underline;
+}
+
+.install-app-btn-container {
+    width: calc(100% - 4.8rem);
+    height: fit-content;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    margin: 1.6rem 2.4rem;
+    padding: 0.8rem 2.4rem;
+    border-radius: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.install-app-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.install-app-box {
+    cursor: pointer;
+    padding: 0.4rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 0.4rem;
+    border-radius: 100rem;
+    background-image: linear-gradient(to right, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
+}
+
+.install-app-box > p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+}
+
+.install-app-box > i {
+    font-size: 1.8rem;
+    color: white;
 }
 
 @media screen and (min-width: 1200px) {

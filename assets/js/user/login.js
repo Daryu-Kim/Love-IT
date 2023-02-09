@@ -2,10 +2,30 @@ import { SetCookie, db, user_data_list } from '/assets/js/modules/_variabled.js'
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 const start_btn = document.querySelector(".video-control-btn");
+const install_app_container = document.querySelector(".install-app-btn-container");
+const install_app = document.querySelector(".install-app-btn-container > p");
+
+let defferred_prompt;
 
 Kakao.init('dd9b7e29165717aef0f1dd5530bc7213');
-
 Kakao.Auth.logout();
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    install_app_container.style.display = "flex";
+    e.preventDefault();
+    defferred_prompt = e;
+})
+
+install_app.addEventListener("click", async () => {
+    if (defferred_prompt !== null) {
+        defferred_prompt.prompt();
+        const { outcome } = await defferred_prompt.userChoice;
+        if (outcome === 'accepted') {
+            defferred_prompt = null;
+        }
+        defferred_prompt = null;
+    }
+})
 
 start_btn.addEventListener("click", function () {
     kakaoLogin();
@@ -48,8 +68,8 @@ function CheckAccount(id) {
                     break;
                 }
             }
-            if(data[user_data_list.length-1] == false) {
-                chk--; 
+            if (data[user_data_list.length - 1] == false) {
+                chk--;
             }
             if (chk == user_data_list.length) {
                 console.log(chk);

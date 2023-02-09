@@ -42,7 +42,7 @@ footer_submit.addEventListener("click", function () {
             hobby.push(content_hobby_label[index].innerHTML);
         }
     });
-    if (hobby != undefined) {
+    if (hobby != undefined && hobby != null && hobby != "") {
         for (let i = 0; i < hobby.length; i++) {
             final_hobby += hobby[i]+",";
         }
