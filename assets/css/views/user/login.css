@@ -74,30 +74,17 @@ a {
 }
 
 .install-app-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
-.install-app-box {
-    cursor: pointer;
-    padding: 0.4rem 1.4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    grid-gap: 0.4rem;
-    border-radius: 100rem;
+.install-app-btn-container > i {
+    font-size: 1.6rem;
+    color: white;
     background-image: linear-gradient(to right, var(--gradient-top) 0%, var(--gradient-midtop) 19%, var(--gradient-midbottom) 60%, var(--gradient-bottom) 100%);
-}
-
-.install-app-box>p {
-    font-size: 1.6rem;
-    color: white;
-    font-weight: 500;
-}
-
-.install-app-box>i {
-    font-size: 1.6rem;
-    color: white;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {

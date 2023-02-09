@@ -3,7 +3,7 @@ import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/f
 
 const start_btn = document.querySelector(".video-control-btn");
 const install_app_container = document.querySelector(".install-app-btn-container");
-const install_app = document.querySelector(".install-app-box");
+const install_app = document.querySelector(".install-app-btn-container > i");
 
 let defferred_prompt;
 
@@ -20,7 +20,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   
     install_app.addEventListener('click', (e) => {
       // hide our user interface that shows our A2HS button
-      
+
       // Show the prompt
       defferred_prompt.prompt();
       // Wait for the user to respond to the prompt
@@ -35,7 +35,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 
+  install_app_container.style.display = "flex";
 
+// PC, Android, iOS ?? Compatable.
 install_app.addEventListener("click", async () => {
     if (defferred_prompt !== null) {
         defferred_prompt.prompt();
