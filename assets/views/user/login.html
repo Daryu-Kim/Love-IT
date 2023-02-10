@@ -34,9 +34,7 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- (D) SERVICE WORKER -->
-    <script>
-        if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/ServiceWorker.js"); }
-    </script>
+    <script src="/assets/js/modules/worker.js" type="module"></script>
 
     <!-- (E) STYLESHEET + JAVASCRIPT
         <link rel="stylesheet" href="YOUR-STYLES.css">
@@ -54,29 +52,32 @@
             <div class="video-control-box">
                 <p class="video-control-btn">러브잇 시작하기</p>
                 <p class="video-control-terms">
-                    시작하면 
+                    시작하면
                     <a href="">서비스 이용약관</a>
                     ,
                     <a href="">개인정보 처리방침</a>
                     ,
                     <br>
-                    그리고 
+                    그리고
                     <a href="">위치정보 이용약관</a>
                     에 동의하게 됩니다.
                 </p>
-                
+
             </div>
         </div>
-        <div class="install-app-btn-container">
-            <p class="install-app-title">
-                원활한 사용자 경험을 위해 앱을 설치하십시오
-            </p>
-            <i class="fa-solid fa-download"></i>
+        <div class="overlay">
+            <div class="install-app-btn-container">
+                <p class="install-app-title">
+                    당신은 지금 인증된 브라우저를 쓰고 계시는군요
+                </p>
+                <i class="fa-solid fa-download"></i>
+            </div>
         </div>
+
     </div>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script type="module" src="/assets/js/modules/_variabled.js"></script>
-    <script type="module" src="/assets/js/user/login.js"></script>
+    <script defer type="module" src="/assets/js/user/login.js"></script>
 </body>
 
 </html>

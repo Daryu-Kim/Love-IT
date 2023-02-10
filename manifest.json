@@ -5,42 +5,42 @@
       {
         "type": "image/png",
         "sizes": "192x192",
-        "src": "/media/icon/images/icons/logo-192.png"
+        "src": "/assets/media/icon/logo-192.png"
       },
       {
         "type": "image/png",
         "sizes": "48x48",
-        "src": "/media/icon/images/icons/logo-48.png"
+        "src": "/assets/media/icon/logo-48.png"
       },
       {
         "type": "image/png",
         "sizes": "72x72",
-        "src": "/media/icon/images/icons/logo-72.png"
+        "src": "/assets/media/icon/logo-72.png"
       },
       {
         "type": "image/png",
         "sizes": "128x128",
-        "src": "/media/icon/images/icons/logo-128.png"
+        "src": "/assets/media/icon/logo-128.png"
       },
       {
         "type": "image/png",
         "sizes": "384x384",
-        "src": "/media/icon/images/icons/logo-384.png"
+        "src": "/assets/media/icon/logo-384.png"
       },
       {
         "type": "image/png",
         "sizes": "512x512",
-        "src": "/media/icon/images/icons/logo-512.png"
+        "src": "/assets/media/icon/logo-512.png"
       },
       {
         "type": "image/png",
         "sizes": "96x96",
-        "src": "/media/icon/images/icons/logo-96.png"
+        "src": "/assets/media/icon/logo-96.png"
       },
       {
         "type": "image/png",
         "sizes": "1024x1024",
-        "src": "/media/icon/images/icons/maskable-1024.png",
+        "src": "/assets/media/icon/maskable-1024.png",
         "purpose": "maskable"
       }
     ],

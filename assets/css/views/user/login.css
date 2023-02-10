@@ -8,7 +8,7 @@
 }
 
 .video-box {
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 
@@ -29,7 +29,7 @@ video {
     padding: 0 2.4rem;
     width: 100%;
     position: absolute;
-    top: calc(80vh - 6rem);
+    top: calc(80% - 6rem);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
@@ -57,20 +57,32 @@ a {
     text-decoration: underline;
 }
 
-.install-app-btn-container {
-    width: calc(100% - 4.8rem);
-    height: fit-content;
-    background-color: white;
+.overlay {
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.install-app-btn-container {
+    width: 100%;
+    height: fit-content;
+    background-color: white;
     z-index: 100;
-    display: none;
+    display: flex;
     margin: 1.6rem 2.4rem;
     padding: 0.8rem 2.4rem;
     border-radius: 0.8rem;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .install-app-title {

@@ -6,52 +6,89 @@ const install_app_container = document.querySelector(".install-app-btn-container
 const install_app = document.querySelector(".install-app-btn-container > i");
 
 let defferred_prompt;
+let startPoint = 0, endPoint = 0;
+var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+var device_inf = navigator.userAgent.toLowerCase();
 
 Kakao.init('dd9b7e29165717aef0f1dd5530bc7213');
-Kakao.Auth.logout();
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    defferred_prompt = e;
-    // Update UI to notify the user they can add to home screen
-    install_app_container.style.display = "flex";
-  
-    install_app.addEventListener('click', (e) => {
-      // hide our user interface that shows our A2HS button
-
-      // Show the prompt
-      defferred_prompt.prompt();
-      // Wait for the user to respond to the prompt
-      defferred_prompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          defferred_prompt = null;
-        });
-    });
-  });
-
-  install_app_container.style.display = "flex";
-
-// PC, Android, iOS ?? Compatable.
-install_app.addEventListener("click", async () => {
-    if (defferred_prompt !== null) {
-        defferred_prompt.prompt();
-        const { outcome } = await defferred_prompt.userChoice;
-        if (outcome === 'accepted') {
-            defferred_prompt = null;
+// Kakao.Auth.logout();
+console.log(`${mobile}\n${device_inf}`);
+if (mobile) {
+    if (device_inf.indexOf("android") > -1) {
+        console.log("Android")
+        if (isRunningStandalone()) { console.log("Standalone"); }
+        else {
+            console.log("Not Standalone")
+            if (device_inf.indexOf("chrome") > -1 && !!window.chrome) {
+                console.log("Verified");
+            } else if (
+                device_inf.indexOf("edg/") > -1 ||
+                device_inf.indexOf("firefox") > -1 ||
+                device_inf.indexOf("opr") > -1 && !!window.opr ||
+                device_inf.indexOf("SamsungBrowser") > -1
+            ) {
+                console.log("Compatible");
+            } else {
+                console.log("Not Compatible")
+            }
         }
-        defferred_prompt = null;
+    } else if (
+        device_inf.indexOf("iphone") > -1 ||
+        device_inf.indexOf("ipad") > -1 ||
+        device_inf.indexOf("ipod") > -1
+    ) {
+        console.log("iOS")
+        if (isRunningStandalone()) { console.log("Standalone"); }
+        else {
+            console.log("Not Standalone");
+            if (device_inf.indexOf("safari") > -1) {
+                console.log("Compatible");
+            } else {
+                console.log("Not Compatible");
+            }
+        }
+    } else {
+        console.log("Other OS");
+        console.log("Not Compatible");
     }
-})
+} else {
+    console.log("Desktop")
+    if (isRunningStandalone()) { console.log("Standalone"); }
+    else {
+        console.log("Not Standalone")
+        if (
+            device_inf.indexOf("chrome") > -1 && !!window.chrome ||
+            device_inf.indexOf("edg/") > -1 ||
+            device_inf.indexOf("firefox") > -1 ||
+            device_inf.indexOf("opr") > -1 && !!window.opr
+        ) {
+            console.log("Verified");
+        } else {
+            console.log("Not Compatible")
+        }
+    }
+}
+
+window.addEventListener('beforeinstallprompt', (e) => { beforeInstallPrompt(e) });
 
 start_btn.addEventListener("click", function () {
     kakaoLogin();
-    // location.href = "/assets/views/user/register-phone.html";
+});
+
+// 모바일 터치 이벤트 (스와이프)
+install_app_container.addEventListener("touchstart", (e) => {
+    console.log("touchstart", e.touches[0].pageY);
+    startPoint = e.touches[0].pageY; // 터치가 시작되는 위치 저장
+});
+
+install_app_container.addEventListener("touchend", (e) => {
+    console.log("touchend", e.changedTouches[0].pageY);
+    endPoint = e.changedTouches[0].pageY; // 터치가 끝나는 위치 저장
+    if (startPoint < endPoint) {
+        install_app_container.style.transform = 'translateY(0)';
+    } else if (startPoint > endPoint) {
+        install_app_container.style.transform = 'translateY(-5.6rem)';
+    }
 });
 
 function kakaoLogin() {
@@ -103,5 +140,30 @@ function CheckAccount(id) {
                 location.href = "/assets/views/user/register-phone.html"
                 , 3000);
         }
+    });
+}
+
+function isRunningStandalone() {
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
+
+function beforeInstallPrompt(e) {
+    e.preventDefault();
+
+    defferred_prompt = e;
+    install_app_container.style.display = "flex";
+
+    install_app.addEventListener('click', () => { installApp() });
+}
+
+function installApp() {
+    defferred_prompt.prompt();
+    defferred_prompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+        } else {
+            console.log('User dismissed the A2HS prompt');
+        }
+        defferred_prompt = null;
     });
 }
