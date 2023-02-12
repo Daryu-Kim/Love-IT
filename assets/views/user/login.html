@@ -5,6 +5,8 @@
     <!-- (A) "USUAL" TITLE CHARSET DESCRIPTION VIEWPORT -->
     <title>Lovit - 러빗</title>
     <meta charset="utf-8">
+    <meta http-equiv="page-enter" content="blendTrans(duration=0.5)">
+    <meta http-equiv="page-exit" content="blendTrans(duration=0.5)">
     <meta name="description" content="소개팅 프로그레시브 웹앱입니다.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <link rel="stylesheet" href="/assets/css/components/main-header.css">
@@ -66,7 +68,19 @@
             </div>
         </div>
         <div class="overlay">
-            <div class="install-app-btn-container">
+            <div class="install-app-btn-container android">
+                <p class="install-app-title">
+                    당신은 지금 인증된 브라우저를 쓰고 계시는군요
+                </p>
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <div class="install-app-btn-container ios">
+                <p class="install-app-title">
+                    당신은 지금 인증된 브라우저를 쓰고 계시는군요
+                </p>
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <div class="install-app-btn-container desktop">
                 <p class="install-app-title">
                     당신은 지금 인증된 브라우저를 쓰고 계시는군요
                 </p>

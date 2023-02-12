@@ -8,7 +8,8 @@ window.onload = function () {
     LoginCheck();
     if (isLogined) {
     } else {
-      location.replace("/assets/views/user/login.html");
+      // location.replace("/assets/views/user/login.html");
+      location.href = "/assets/views/user/login.html";
     }
   }, 3500);
 }

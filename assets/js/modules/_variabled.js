@@ -32,6 +32,15 @@ export function GetCookie(name) {
     return value? value[2] : null;
 }
 
+export const app_title = {
+    "index": [
+        "러브잇"
+    ],
+    "login": [
+        "러브잇 - 로그인"
+    ]
+}
+
 export const user_data_list = [
     "phone", "gender", "birth", "locate",
     "nick", "height", "faith", "drink",

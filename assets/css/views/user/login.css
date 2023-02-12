@@ -85,6 +85,10 @@ a {
     z-index: 2;
 }
 
+.android, .ios {
+    display: none;
+}
+
 .install-app-title {
     font-size: 1.4rem;
     font-weight: 700;

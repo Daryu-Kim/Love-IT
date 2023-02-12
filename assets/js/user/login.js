@@ -1,4 +1,4 @@
-import { SetCookie, db, user_data_list } from '/assets/js/modules/_variabled.js'
+import { SetCookie, db, user_data_list, app_title } from '/assets/js/modules/_variabled.js'
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 
 const start_btn = document.querySelector(".video-control-btn");
@@ -6,14 +6,15 @@ const install_app_container = document.querySelector(".install-app-btn-container
 const install_app = document.querySelector(".install-app-btn-container > i");
 
 let defferred_prompt;
-let startPoint = 0, endPoint = 0;
 var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
 var device_inf = navigator.userAgent.toLowerCase();
 
+document.title = app_title["login"];
 Kakao.init('dd9b7e29165717aef0f1dd5530bc7213');
 // Kakao.Auth.logout();
 console.log(`${mobile}\n${device_inf}`);
 if (mobile) {
+    console.log(device_inf);
     if (device_inf.indexOf("android") > -1) {
         console.log("Android")
         if (isRunningStandalone()) { console.log("Standalone"); }
@@ -73,22 +74,6 @@ window.addEventListener('beforeinstallprompt', (e) => { beforeInstallPrompt(e) }
 
 start_btn.addEventListener("click", function () {
     kakaoLogin();
-});
-
-// 모바일 터치 이벤트 (스와이프)
-install_app_container.addEventListener("touchstart", (e) => {
-    console.log("touchstart", e.touches[0].pageY);
-    startPoint = e.touches[0].pageY; // 터치가 시작되는 위치 저장
-});
-
-install_app_container.addEventListener("touchend", (e) => {
-    console.log("touchend", e.changedTouches[0].pageY);
-    endPoint = e.changedTouches[0].pageY; // 터치가 끝나는 위치 저장
-    if (startPoint < endPoint) {
-        install_app_container.style.transform = 'translateY(0)';
-    } else if (startPoint > endPoint) {
-        install_app_container.style.transform = 'translateY(-5.6rem)';
-    }
 });
 
 function kakaoLogin() {
